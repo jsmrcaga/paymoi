@@ -49,8 +49,15 @@ body{
 
 }
 
+#balance{
+	font-weight:bold;
+}
+
 @media only screen and (max-width: 500px){
+	html{
+		padding-left:15px;
+	}
 	.container{
 		padding-left:0px;
 	}
-} 
+}
