@@ -2,5 +2,18 @@
 //		PERFORMANCE
 // ************************
 $("#perf-chart").highcharts({
-	title: "PERFORMANCE"
+	chart:{
+		type: 'spline',
+	},
+	
+	legend: {
+		layout: 'horizontal',
+		align:'center',
+		verticalAlign: 'bottom',
+	},
+
+	title: {
+		title:"PERFORMANCE",
+	},
+	// series: [{threshold:0, negativeColor:, color:}]
 });
