@@ -23,31 +23,38 @@
 
 <div class="container">
 	<div class="row"><h1>Bienvenue {{user.name}}</h1></div>
+	<!-- START INFO -->
 	<div class='row'>
 		<!-- CARD -->
 		<div class="col s12 l6 m6">
-			<div class="card red lighten-1">
+			<div class="card green lighten-1">
 				<div class="card-content">
 					<span class="card-title">On me doit:</span>
 					<span class="card-money">4.53€</span>
 				</div>
 				<div class="card-action">
-					<a href="#" class="btn">LISTE</a>
+					<a href="#" class="btn white">LISTE</a>
 				</div>
 			</div>
 		</div>
 		<!-- CARD -->
 		<div class="col s12 l6 m6">
-			<div class="card green lighten-1">
+			<div class="card red lighten-1">
 				<div class="card-content">
 					<span class="card-title">Je dois:</span>
 					<span class="card-money">36.88€</span>
 				</div>
 				<div class="card-action">
-					<a href="#" class="btn">PAYER</a>
+					<a href="#" class="btn white">PAYER</a>
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<!-- OTHER INFO -->
+	<!-- PERFORMANCE -->
+	<div class="row">
+		<div class="col l12 s12 m12 highcharts-container long" id="perf-chart"></div>
 	</div>
 </div>
 
