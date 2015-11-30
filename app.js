@@ -17,11 +17,12 @@ var cors = require('cors');
 app.use(cors());
 app.options("*", cors());
 
-app.use(session({
-	secret : '',
-	resave : false,
-	saveUninitialized: true 
-}));
+// app.use(session({
+// 	secret : '',
+// 	resave : false,
+// 	saveUninitialized: true 
+// }));
+
 var CASAuthentication = require('cas-authentication');
 var cas = new CASAuthentication({
 	cas_url         : 'https://cas.utc.fr/cas',
