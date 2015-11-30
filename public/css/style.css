@@ -42,8 +42,9 @@ body{
 }
 
 .card-money{
-	font-size: 40px;
+	font-size: 70px;
 	font-weight: bold;
-	padding-left: 70spx;
 	font-family :'Quicksand';
+	color: #FFF;
+
 }
