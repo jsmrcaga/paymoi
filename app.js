@@ -53,6 +53,11 @@ app.get("/", cas.bounce, function (req, res, err){
 		user:{
 			login: req.session.cas_user,
 			name: req.session.cas_userinfo.displayname
+		},
+		money:{
+			user: req.session.cas_user,
+			debt: null,
+			profit: null,
 		}
 	});
 });
