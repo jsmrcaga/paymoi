@@ -34,6 +34,7 @@ main{
 	margin: 0 auto;
 	width:100%;
 	padding-left:240px;
+	text-align:center;
 }
 
 .container{
@@ -45,9 +46,6 @@ main{
 .card-money{
 	font-size: 40px;
 	font-weight: bold;
+	padding-left: 50px;
 	font-family :'Quicksand';
-}
-
-.card-money::before{
-	content: "</br>";
 }
