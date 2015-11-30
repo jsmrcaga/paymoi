@@ -1,10 +1,16 @@
 var config = require('./config.js');
 
 var express = require('express');
+var session = require('express-session');
 var app = express();
 
 var mysql = require('mysql');
-mysql.connection()
+var connection = mysql.createConnection({
+	host: config.db.host,
+	user: config.db.user,
+	password: config.db.password,
+	database: config.db.database
+});
 
 var mustache = require('mustache-express');
 app.engine('html', mustache());
@@ -17,11 +23,11 @@ var cors = require('cors');
 app.use(cors());
 app.options("*", cors());
 
-// app.use(session({
-// 	secret : '',
-// 	resave : false,
-// 	saveUninitialized: true 
-// }));
+app.use(session({
+	secret : '',
+	resave : false,
+	saveUninitialized: true 
+}));
 
 var CASAuthentication = require('cas-authentication');
 var cas = new CASAuthentication({
@@ -57,10 +63,6 @@ app.get("/admin", cas.block, function (req, res, err){
 
 app.get("/logout", cas.logout);
 
-app.listen(9797, function(){
-	console.log("Listening!");
-});
-
 app.post("/transaction/new", function (req, res, err){
 	var payer_id = req.body.payer_id;
 	var debtFor = req.body.debt;
@@ -80,4 +82,8 @@ app.post("/transaction/new", function (req, res, err){
 
 	sql = "INSERT INTO `payments` ()"
 
+});
+
+app.listen(9797, function(){
+	console.log("Listening!");
 });
