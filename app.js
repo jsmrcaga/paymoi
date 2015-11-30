@@ -32,7 +32,7 @@ app.use(session({
 var CASAuthentication = require('cas-authentication');
 var cas = new CASAuthentication({
 	cas_url         : 'https://cas.utc.fr/cas',
-	service_url     : 'https://',
+	service_url     : 'http://92.222.5.101:9797',
 	cas_version     : '2.0',
 	renew           : false,
 	is_dev_mode     : false,
@@ -50,8 +50,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get("/", cas.bounce, function (req, res, err){
 	res.render("index", {
 	});
-	console.log(req.session.cas_user);
-	console.log(req.session);
+	// console.log(req.session.cas_user);
+	// console.log(req.session);
 });
 
 app.get("/admin", cas.block, function (req, res, err){
