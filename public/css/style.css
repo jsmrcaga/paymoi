@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400,700);
+body{
+	font-family: 'Quicksand'
+}
 
 .menu-icon{
 	margin-right:25px;
