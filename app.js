@@ -50,9 +50,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", cas.bounce, function (req, res, err){
 	res.render("index", {
+		user:{
+			login: req.session.cas_user,
+			name: req.session.cas_userinfo.displayname
+		}
 	});
-	// console.log(req.session.cas_user);
-	// console.log(req.session);
 });
 
 app.get("/admin", cas.block, function (req, res, err){
