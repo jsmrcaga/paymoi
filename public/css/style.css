@@ -33,7 +33,6 @@
 
 .container{
 	box-sizing: border-box;
-	margin: 0;
 	padding-left:250px;
 	height:100%;
 	width:100%;
@@ -42,6 +41,6 @@
 .card-money{
 	font-size: 40px;
 	font-weight: bold;
-	padding-left: 50px;
+	padding-left: 70spx;
 	font-family :'Quicksand';
 }
