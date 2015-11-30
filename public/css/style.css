@@ -41,3 +41,13 @@ main{
 	height:100%;
 	width:100%;
 }
+
+.card-money{
+	font-size: 40px;
+	font-weight: bold;
+	font-family :'Quicksand';
+}
+
+.card-money::before{
+	content: "</br>";
+}
