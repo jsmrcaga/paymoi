@@ -17,6 +17,7 @@ app.engine('html', mustache());
 app.set('view engine', 'html');
 
 app.set('views', __dirname+"/views");
+
 app.use(express.static(__dirname+"/public"));
 
 var cors = require('cors');
@@ -24,7 +25,7 @@ app.use(cors());
 app.options("*", cors());
 
 app.use(session({
-	secret : '',
+	secret : 'monSuperSecretDeLaMortquiTue',
 	resave : false,
 	saveUninitialized: true 
 }));
