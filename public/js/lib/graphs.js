@@ -4,6 +4,10 @@
 $("#perf-chart").highcharts({
 	chart:{
 		type: 'spline',
+		style:{
+			fontFamily: 'Quicksand',
+			
+		}
 	},
 	
 	legend: {
