@@ -17,7 +17,7 @@ $("#perf-chart").highcharts({
 	},
 
 	title: {
-		text:"PERFORMANCE",
+		text:"",
 		align: 'left',
 
 	},
