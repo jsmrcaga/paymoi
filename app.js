@@ -56,8 +56,8 @@ app.get("/", cas.bounce, function (req, res, err){
 		},
 		money:{
 			user: req.session.cas_user,
-			debt: null,
-			profit: null,
+			debt: 3598 / 100,
+			profit: 457/100,
 		}
 	});
 });

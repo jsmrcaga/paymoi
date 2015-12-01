@@ -13,7 +13,7 @@ $("#perf-chart").highcharts({
 	},
 
 	title: {
-		title:"PERFORMANCE",
+		text:"PERFORMANCE",
 	},
 	// series: [{threshold:0, negativeColor:, color:}]
 });
