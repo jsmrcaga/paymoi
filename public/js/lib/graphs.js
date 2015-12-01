@@ -3,7 +3,7 @@
 // ************************
 $("#perf-chart").highcharts({
 	chart:{
-		type: 'spline',
+		type: 'areaspline',
 		style:{
 			fontFamily: 'Quicksand',
 			fontSize: "30px"
@@ -37,5 +37,10 @@ $("#perf-chart").highcharts({
 		title:{
 			text: "Semaines"
 		}
-	}
+	},
+	 plotOptions: {
+		areaspline: {
+			fillOpacity: 0.5
+		}
+	},
 });
