@@ -63,6 +63,8 @@ body{
 }
 
 .euro-sign::after{
-	font-family: "Helvetica";
+	font-family: "Arial";
+	font-style: normal;
+	margin-left: 7px;
 	content: "€";
 }
