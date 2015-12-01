@@ -62,7 +62,7 @@ body{
 	}
 }
 
-.euro-sign{
+.euro-sign::after{
 	font-family: "Helvetica";
 	content: "€";
 }
