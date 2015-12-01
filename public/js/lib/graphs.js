@@ -6,7 +6,7 @@ $("#perf-chart").highcharts({
 		type: 'spline',
 		style:{
 			fontFamily: 'Quicksand',
-
+			fontSize: "30px"
 		}
 	},
 	
@@ -19,7 +19,7 @@ $("#perf-chart").highcharts({
 	title: {
 		text:"PERFORMANCE",
 		align: 'left',
-		
+
 	},
 	// series: [{threshold:0, negativeColor:, color:}]
 });
