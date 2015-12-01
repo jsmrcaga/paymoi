@@ -21,5 +21,10 @@ $("#perf-chart").highcharts({
 		align: 'left',
 
 	},
-	// series: [{threshold:0, negativeColor:, color:}]
+	series: [{
+		threshold:0,
+		negativeColor: "#FF5555",
+		color: "#55FF55",
+		data: [[0,1], [1,2], [2,-3],[3,-3], [4,0], [5,1],[6,-2],[7,3],[8,9]]
+	}]
 });
