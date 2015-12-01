@@ -59,7 +59,7 @@ app.get("/", cas.bounce, function (req, res, err){
 			debt: 3598 / 100,
 			profit: 457/100,
 			balance: ((457 - 3598)/ 100),
-			color: "green"
+			color: "red"
 		}
 	});
 });
