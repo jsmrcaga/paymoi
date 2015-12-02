@@ -78,6 +78,21 @@ app.get("/", cas.bounce, function (req, res, err){
 					console.log("Error in insert: ", err);
 					return;
 				}
+
+				
+				res.render("index", {
+					user:{
+						login: req.session.cas_user,
+						name: req.session.cas_userinfo.displayname
+					},
+					money:{
+						user: req.session.cas_user,
+						debt: 3598 / 100,
+						profit: 457/100,
+						balance: ((457 - 3598)/ 100),
+						color: "red"
+					}
+				});
 			});
 
 		}
@@ -86,19 +101,6 @@ app.get("/", cas.bounce, function (req, res, err){
 	// before rendering:
 		// check if user exists, if not, add to db
 		// calculate balance and color
-	res.render("index", {
-		user:{
-			login: req.session.cas_user,
-			name: req.session.cas_userinfo.displayname
-		},
-		money:{
-			user: req.session.cas_user,
-			debt: 3598 / 100,
-			profit: 457/100,
-			balance: ((457 - 3598)/ 100),
-			color: "red"
-		}
-	});
 });
 
 app.get("/admin", cas.block, function (req, res, err){
