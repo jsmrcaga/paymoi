@@ -52,7 +52,14 @@ app.get("/", cas.bounce, function (req, res, err){
 
 	var sql = "SELECT * FROM `users` WHERE login=" + connection.escape(req.session.cas_user);
 	connection.query(sql, function (err, results){
-		if(results.length > 1 || err){
+		console.log("Resutls:", results);
+		if(err){
+			res.send(err);
+			console.log(err);
+			return;
+		}
+
+		if(results.length > 1){
 			res.sendStatus(403);
 			// res.send(err);
 			res.end();
@@ -68,7 +75,9 @@ app.get("/", cas.bounce, function (req, res, err){
 					return;
 				}
 
-				
+
+		}
+	});
 				// before rendering:
 					// check if user exists, if not, add to db
 
@@ -88,8 +97,6 @@ app.get("/", cas.bounce, function (req, res, err){
 				});
 
 			});
-		}
-	});
 });
 
 app.get("/admin", cas.block, function (req, res, err){
