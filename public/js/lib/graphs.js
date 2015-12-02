@@ -14,6 +14,7 @@ $("#perf-chart").highcharts({
 		layout: 'horizontal',
 		align:'center',
 		verticalAlign: 'bottom',
+		enabled: false
 	},
 
 	title: {
