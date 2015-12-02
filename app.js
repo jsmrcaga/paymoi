@@ -64,7 +64,6 @@ app.get("/", cas.bounce, function (req, res, err){
 
 		if(results.length > 1){
 			res.sendStatus(403);
-			// res.send(err);
 			res.end();
 			return;
 		}
@@ -101,6 +100,7 @@ app.get("/", cas.bounce, function (req, res, err){
 		}
 
 		if(results.length == 1){
+			console.log("Entered results.length == 1");
 			res.render("index", {
 					user:{
 						login: req.session.cas_user,
@@ -127,11 +127,8 @@ app.get("/", cas.bounce, function (req, res, err){
 			}
 		});
 		res.end();
+		return;
 	});
-
-	// before rendering:
-		// check if user exists, if not, add to db
-		// calculate balance and color
 });
 
 app.get("/admin", cas.block, function (req, res, err){
