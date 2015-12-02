@@ -11,10 +11,10 @@ $("#perf-chart").highcharts({
 	},
 	
 	legend: {
-		layout: 'horizontal',
-		align:'center',
-		verticalAlign: 'bottom',
-		enabled: false
+		enabled: false,
+		// layout: 'horizontal',
+		// align:'center',
+		// verticalAlign: 'bottom',
 	},
 
 	title: {
