@@ -71,7 +71,7 @@ app.get("/", cas.bounce, function (req, res, err){
 
 		if(results.length == 0){
 			console.log("Entered results.length==0");
-			sql = "INSERT INTO `users` (login, gc_registration) VALUES ("+connection.escape(req.session.cas_user)+ ", NULL);";
+			sql = "INSERT INTO `users` (login, gcm_registration) VALUES ("+connection.escape(req.session.cas_user)+ ", NULL);";
 			connection.query(sql, function (err, results_insert){
 				if(err){
 					res.send(err);
@@ -79,7 +79,7 @@ app.get("/", cas.bounce, function (req, res, err){
 					return;
 				}
 
-				
+
 				res.render("index", {
 					user:{
 						login: req.session.cas_user,
