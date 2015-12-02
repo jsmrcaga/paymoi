@@ -87,10 +87,10 @@ app.get("/", cas.bounce, function (req, res, err){
 					},
 					money:{
 						user: req.session.cas_user,
-						debt: 3598 / 100,
-						profit: 457/100,
-						balance: ((457 - 3598)/ 100),
-						color: "red"
+						debt: 0,
+						profit: 0,
+						balance: 0,
+						color: "green"
 					}
 				});
 
