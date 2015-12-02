@@ -93,9 +93,37 @@ app.get("/", cas.bounce, function (req, res, err){
 						color: "red"
 					}
 				});
+
+				res.end();
+				return;
 			});
 
 		}
+
+		if(results.length == 1){
+			res.render("index", {
+					user:{
+						login: req.session.cas_user,
+						name: req.session.cas_userinfo.displayname
+					},
+					money:{
+						user: req.session.cas_user,
+						debt: 3598 / 100,
+						profit: 457/100,
+						balance: ((457 - 3598)/ 100),
+						color: "red"
+					}
+				});
+		}
+
+		res.sendStatus(200);
+		res.send({
+			error:{
+				message: 'Unknown error, please come back in a little while',
+				code: 1
+			}
+		});
+		res.end();
 	});
 
 	// before rendering:
