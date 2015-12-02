@@ -74,10 +74,11 @@ app.get("/", cas.bounce, function (req, res, err){
 					console.log("Error in insert: ", err);
 					return;
 				}
-
+			});
 
 		}
 	});
+
 				// before rendering:
 					// check if user exists, if not, add to db
 
@@ -95,8 +96,6 @@ app.get("/", cas.bounce, function (req, res, err){
 						color: "red"
 					}
 				});
-
-			});
 });
 
 app.get("/admin", cas.block, function (req, res, err){
