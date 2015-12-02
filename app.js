@@ -49,17 +49,45 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", cas.bounce, function (req, res, err){
-	res.render("index", {
-		user:{
-			login: req.session.cas_user,
-			name: req.session.cas_userinfo.displayname
-		},
-		money:{
-			user: req.session.cas_user,
-			debt: 3598 / 100,
-			profit: 457/100,
-			balance: ((457 - 3598)/ 100),
-			color: "red"
+
+	var sql = "SELECT * FROM `users` WHERE login=" + connection.escape(req.session.cas_user);
+	connection.query(sql, function (err, results){
+		if(results.length > 1 || err){
+			res.sendStatus(403);
+			// res.send(err);
+			res.end();
+			return;
+		}
+
+		if(results.length == 0){
+			sql = "INSERT INTO `users` (login, gc_registration) VALUES ("+connection.escape(req.session.cas_user)+ ", NULL);";
+			connection.query(sql, function (err, results_insert){
+				if(err){
+					res.send(err);
+					console.log("Error in insert: ", err);
+					return;
+				}
+
+				
+				// before rendering:
+					// check if user exists, if not, add to db
+
+					// calculate balance and color
+				res.render("index", {
+					user:{
+						login: req.session.cas_user,
+						name: req.session.cas_userinfo.displayname
+					},
+					money:{
+						user: req.session.cas_user,
+						debt: 3598 / 100,
+						profit: 457/100,
+						balance: ((457 - 3598)/ 100),
+						color: "red"
+					}
+				});
+
+			});
 		}
 	});
 });

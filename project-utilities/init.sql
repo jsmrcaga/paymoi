@@ -8,7 +8,7 @@ USE paymoi;
 -- CREATION OF TABLES
 -- ******************
 CREATE TABLE users (
-	login varchar(8) COLLATE utf8_unicode_ci UNIQUE,
+	login varchar(8) COLLATE utf8_unicode_ci UNIQUE NOT NULL,
 	gcm_registration varchar(150) COLLATE utf8_unicode_ci
 );
 
