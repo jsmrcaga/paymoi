@@ -4,7 +4,7 @@ module.exports = {
 	db : {
 		user: 'root',
 		password: 'phantomoftheopera',
-		db:'paymoi',
+		database:'paymoi',
 		host:'localhost'
 	},
 
