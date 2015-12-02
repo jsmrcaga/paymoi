@@ -98,6 +98,8 @@ app.get("/", cas.bounce, function (req, res, err){
 
 				return;
 			});
+			
+			return;
 
 		}
 
