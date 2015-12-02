@@ -114,6 +114,9 @@ app.get("/", cas.bounce, function (req, res, err){
 						color: "red"
 					}
 				});
+
+			res.end();
+			return;
 		}
 
 		res.sendStatus(200);
