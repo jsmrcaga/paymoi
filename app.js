@@ -98,12 +98,21 @@ app.get("/", cas.bounce, function (req, res, err){
 
 				return;
 			});
-			
+
 			return;
 
 		}
 
 		console.log("Entered results.length == 1");
+		var sql = "SELECT * FROM `debts` WHERE participant=" + connection.escape(req.session.cas_user) + " AND payed=false";
+		connection.query(sql, function (err, results_payed){
+			if(err){
+				res.send(err);
+				return;
+			}
+
+			
+		});
 		res.render("index", {
 				user:{
 					login: req.session.cas_user,
