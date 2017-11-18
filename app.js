@@ -4,13 +4,13 @@ var express = require('express');
 var session = require('express-session');
 var app = express();
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-	host: config.db.host,
-	user: config.db.user,
-	password: config.db.password,
-	database: config.db.database
-});
+// var mysql = require('mysql');
+// var connection = mysql.createConnection({
+// 	host: config.db.host,
+// 	user: config.db.user,
+// 	password: config.db.password,
+// 	database: config.db.database
+// });
 
 var mustache = require('mustache-express');
 app.engine('html', mustache());
@@ -33,7 +33,7 @@ app.use(session({
 var CASAuthentication = require('cas-authentication');
 var cas = new CASAuthentication({
 	cas_url         : 'https://cas.utc.fr/cas',
-	service_url     : 'http://92.222.5.101:9797',
+	service_url     : 'http://localhost:9797',
 	cas_version     : '2.0',
 	renew           : false,
 	is_dev_mode     : false,
@@ -49,6 +49,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", cas.bounce, function (req, res, err){
+
+
+	return res.render("index", {
+		user:{
+			login: req.session.cas_user,
+			name: req.session.cas_userinfo.displayname
+		},
+		money:{
+			user: req.session.cas_user,
+			debt: 0,
+			profit: 0,
+			balance: 0,
+			color: "green"
+		}
+	});
 
 	var error = true;
 
